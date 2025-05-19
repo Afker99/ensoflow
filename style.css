@@ -1,0 +1,60 @@
+/* Gradient Border */
+.left-border {
+  border-width: 0 0 0 1px; /* Only left */
+  border-image: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0),
+      #f8fbff,
+      rgba(255, 255, 255, 0)
+    )
+    1 100%;
+}
+
+.splide__arrow svg {
+  fill: white !important;
+}
+
+.faq-question #toggle {
+  transition: all 0.3s ease;
+}
+/* Active state styles */
+.faq-item.active .faq-question {
+  background: #00b2a9;
+  border-radius: 16px 16px 0 0;
+}
+
+.faq-item.active .faq-answer {
+  height: auto;
+  opacity: 1;
+  padding: 32px;
+}
+
+.faq-item.active .faq-question h3 {
+  color: white;
+}
+
+.faq-item.active .faq-question #toggle {
+  color: white;
+  transform: rotate(45deg);
+}
+
+.faq-answer {
+  height: 0;
+  opacity: 0;
+  overflow: hidden;
+  /* transition: height 0.3s ease, opacity 0.3s ease; */
+}
+
+/* smooth transition for smooth show/hide of Navbar */
+#nav-bar-b {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+.nav-link.w--current {
+  color: #2a3990 !important;
+  font-weight: 500 !important;
+}
