@@ -17,6 +17,16 @@ document.addEventListener("DOMContentLoaded", (event) => {
     navAnimationComplete = true;
   });
 
+
+  // 1. service-intro
+  servicesTimeline.from(".service-intro", {
+    y: 50,
+    opacity: 0,
+    duration: 0.75,
+    ease: "power3.out",
+    stagger: 0.1,
+  });
+
   // 1. service-containers
   servicesTimeline.from(".service-container", {
     y: 50,
