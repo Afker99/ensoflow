@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
+  // FAQ Interaction
   const faqItems = document.querySelectorAll(".faq-item");
 
   function openFaqItem(item) {
@@ -45,4 +46,38 @@ document.addEventListener("DOMContentLoaded", function () {
       isOpen = isOpen ? closeFaqItem(item) : openFaqItem(item);
     });
   });
+
+  // Testimonial Carousel / Init infinite scroll carousel
+  const track = document.querySelector(".carousel-track");
+  const cards = document.querySelectorAll(".testimonial");
+  gsap.set(track, { x: 0 });
+
+  const originalWidth = Array.from(cards).reduce((total, card) => {
+    return total + card.offsetWidth + 24;
+  }, 0);
+
+  cards.forEach((card) => {
+    const clone = card.cloneNode(true);
+    track.appendChild(clone);
+  });
+
+  let scrollTween;
+
+  function createInfiniteScroll() {
+    if (scrollTween) scrollTween.kill();
+
+    scrollTween = gsap.fromTo(
+      track,
+      { x: 0 },
+      {
+        x: -originalWidth,
+        duration: 60,
+        ease: "none",
+        repeat: -1,
+        onRepeat: () => gsap.set(track, { x: 0 }),
+      }
+    );
+  }
+
+  createInfiniteScroll();
 });
