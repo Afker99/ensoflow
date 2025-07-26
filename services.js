@@ -27,7 +27,16 @@ document.addEventListener("DOMContentLoaded", (event) => {
     stagger: 0.1,
   });
 
-  // 1. service-containers
+  // 2. service-intro
+  servicesTimeline.from(".community-block", {
+    y: 50,
+    opacity: 0,
+    duration: 0.75,
+    ease: "power3.out",
+    stagger: 0.1,
+  });
+
+  // 3. service-containers
   servicesTimeline.from(".service-container", {
     y: 50,
     opacity: 0,
