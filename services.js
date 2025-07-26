@@ -17,7 +17,6 @@ document.addEventListener("DOMContentLoaded", (event) => {
     navAnimationComplete = true;
   });
 
-
   // 1. service-intro
   servicesTimeline.from(".service-intro", {
     y: 50,
@@ -27,8 +26,26 @@ document.addEventListener("DOMContentLoaded", (event) => {
     stagger: 0.1,
   });
 
-  // 2. service-intro
+  // 2. AI Community Header
+  servicesTimeline.from(".ai-comm-header-container", {
+    y: 50,
+    opacity: 0,
+    duration: 0.75,
+    ease: "power3.out",
+    stagger: 0.1,
+  });
+
+  // 2. AI Community Blocks
   servicesTimeline.from(".community-block", {
+    y: 50,
+    opacity: 0,
+    duration: 0.75,
+    ease: "power3.out",
+    stagger: 0.1,
+  });
+
+  // 3. service-header-container
+  servicesTimeline.from(".services-header-container", {
     y: 50,
     opacity: 0,
     duration: 0.75,
